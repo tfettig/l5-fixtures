@@ -10,7 +10,7 @@ class FixturesTest extends TestCase
      * Tears down the fixture, for example, close a network connection.
      * This method is called after a test is executed.
      */
-    protected function tearDown()
+    protected function tearDown(): void
     {
         parent::tearDown();
 
@@ -18,7 +18,7 @@ class FixturesTest extends TestCase
     }
 
 
-    public function testUp()
+    public function testUp(): void
     {
         $queryBuilder = m::mock('Illuminate\Database\Query\Builder');
         $queryBuilder->shouldReceive('insert')->with(m::type('array'))->times(4);
@@ -39,7 +39,7 @@ class FixturesTest extends TestCase
         $this->assertEquals(4, sizeof($fixtures->getFixtures()));
     }
 
-    public function testUpOnlyUsers()
+    public function testUpOnlyUsers(): void
     {
         $queryBuilder = m::mock('Illuminate\Database\Query\Builder');
         $queryBuilder->shouldReceive('insert')->with(m::type('array'))->once();
@@ -56,7 +56,7 @@ class FixturesTest extends TestCase
         $this->assertEquals(4, sizeof($fixtures->getFixtures()));
     }
 
-    public function testDown()
+    public function testDown(): void
     {
         $queryBuilder = m::mock('Illuminate\Database\Query\Builder');
         $queryBuilder->shouldReceive('truncate')->times(4);
@@ -77,7 +77,7 @@ class FixturesTest extends TestCase
         $this->assertEquals(4, sizeof($fixtures->getFixtures()));
     }
 
-    public function testGetFixtures()
+    public function testGetFixtures(): void
     {
         $fixtures = new \DariusIII\L5Fixtures\Fixtures(['location' => __DIR__ . '/_data']);
         $this->assertEquals(4, sizeof($fixtures->getFixtures()));
