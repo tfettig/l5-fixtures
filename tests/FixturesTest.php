@@ -74,12 +74,12 @@ class FixturesTest extends TestCase
 
         $fixtures->down();
 
-        $this->assertEquals(4, sizeof($fixtures->getFixtures()));
+        $this->assertCount(4, $fixtures->getFixtures());
     }
 
     public function testGetFixtures(): void
     {
         $fixtures = new \DariusIII\L5Fixtures\Fixtures(['location' => __DIR__ . '/_data']);
-        $this->assertEquals(4, sizeof($fixtures->getFixtures()));
+        $this->assertCount(4, $fixtures->getFixtures());
     }
 }
