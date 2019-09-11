@@ -1,4 +1,4 @@
-<?php namespace Mayconbordin\L5Fixtures\Loaders;
+<?php namespace DariusIII\L5Fixtures\Loaders;
 
 use League\Csv\Reader;
 

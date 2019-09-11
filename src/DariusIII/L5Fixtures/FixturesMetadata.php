@@ -1,4 +1,4 @@
-<?php namespace Mayconbordin\L5Fixtures;
+<?php namespace DariusIII\L5Fixtures;
 
 use League\Flysystem\Filesystem;
 use League\Flysystem\Plugin\ListFiles;

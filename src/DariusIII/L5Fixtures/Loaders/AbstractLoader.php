@@ -1,6 +1,6 @@
-<?php namespace Mayconbordin\L5Fixtures\Loaders;
+<?php namespace DariusIII\L5Fixtures\Loaders;
 
-use Mayconbordin\L5Fixtures\FixturesMetadata;
+use DariusIII\L5Fixtures\FixturesMetadata;
 
 abstract class AbstractLoader implements Loader
 {

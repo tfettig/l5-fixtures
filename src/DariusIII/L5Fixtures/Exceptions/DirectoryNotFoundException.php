@@ -1,4 +1,4 @@
-<?php namespace Mayconbordin\L5Fixtures\Exceptions;
+<?php namespace DariusIII\L5Fixtures\Exceptions;
 
 
 class DirectoryNotFoundException extends FixturesException

@@ -1,9 +1,9 @@
 {
-    "name": "mayconbordin/l5-fixtures",
+    "name": "dariusiii/l5-fixtures",
     "type": "library",
     "description": "A fixtures package for Laravel 5",
     "keywords": ["laravel", "laravel 5", "fixtures", "json", "yaml", "csv"],
-    "homepage": "https://github.com/mayconbordin/l5-fixtures",
+    "homepage": "https://github.com/dariusiii/l5-fixtures",
     "license": "MIT",
     "authors": [
         {
@@ -12,30 +12,30 @@
         }
     ],
     "require": {
-        "php": ">=5.5.0",
-        "illuminate/support": "5.x",
-        "illuminate/database": "5.x",
-        "illuminate/console": "5.x",
+        "php": ">=7.2.0",
+        "illuminate/support": "^5.8|^6.0",
+        "illuminate/database": "^5.8|^6.0",
+        "illuminate/console": "^5.8|^6.0",
         "league/csv": "~8.0.0",
         "symfony/yaml": ">=2.8.2",
         "league/flysystem": "~1.0.16"
     },
     "require-dev": {
-        "phpunit/phpunit": "~4.0",
-        "mockery/mockery": "~0.9.4"
+        "phpunit/phpunit": "^7.0",
+        "mockery/mockery": "^1.2"
     },
     "autoload": {
         "psr-4": {
-            "Mayconbordin\\L5Fixtures\\": "src/Mayconbordin/L5Fixtures/"
+            "DariusIII\\L5Fixtures\\": "src/DariusIII/L5Fixtures/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Mayconbordin\\L5Fixtures\\FixturesServiceProvider"
+                "DariusIII\\L5Fixtures\\FixturesServiceProvider"
             ],
             "aliases": {
-                "Fixtures": "Mayconbordin\\L5Fixtures\\FixturesFacade"
+                "Fixtures": "DariusIII\\L5Fixtures\\FixturesFacade"
             }
         }
     },

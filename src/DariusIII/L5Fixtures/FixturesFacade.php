@@ -1,4 +1,4 @@
-<?php namespace Mayconbordin\L5Fixtures;
+<?php namespace DariusIII\L5Fixtures;
 
 use Illuminate\Support\Facades\Facade;
 

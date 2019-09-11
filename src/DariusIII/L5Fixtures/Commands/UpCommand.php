@@ -1,7 +1,7 @@
-<?php namespace Mayconbordin\L5Fixtures\Commands;
+<?php namespace DariusIII\L5Fixtures\Commands;
 
 use Illuminate\Console\Command;
-use Mayconbordin\L5Fixtures\Exceptions\FixturesException;
+use DariusIII\L5Fixtures\Exceptions\FixturesException;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputOption;
 

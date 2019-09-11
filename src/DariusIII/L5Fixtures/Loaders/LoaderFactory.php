@@ -1,7 +1,7 @@
-<?php namespace Mayconbordin\L5Fixtures\Loaders;
+<?php namespace DariusIII\L5Fixtures\Loaders;
 
-use Mayconbordin\L5Fixtures\Exceptions\UnsupportedFormatException;
-use Mayconbordin\L5Fixtures\FixturesMetadata;
+use DariusIII\L5Fixtures\Exceptions\UnsupportedFormatException;
+use DariusIII\L5Fixtures\FixturesMetadata;
 
 class LoaderFactory
 {

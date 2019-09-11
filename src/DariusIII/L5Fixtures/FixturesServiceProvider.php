@@ -1,8 +1,8 @@
-<?php namespace Mayconbordin\L5Fixtures;
+<?php namespace DariusIII\L5Fixtures;
 
 use Illuminate\Support\ServiceProvider;
-use Mayconbordin\L5Fixtures\Commands\DownCommand;
-use Mayconbordin\L5Fixtures\Commands\UpCommand;
+use DariusIII\L5Fixtures\Commands\DownCommand;
+use DariusIII\L5Fixtures\Commands\UpCommand;
 
 class FixturesServiceProvider extends ServiceProvider
 {
@@ -49,7 +49,7 @@ class FixturesServiceProvider extends ServiceProvider
             return new Fixtures($app['config']->get('fixtures'));
         });
 
-        $this->app->alias('fixtures', 'Mayconbordin\L5Fixtures\Fixtures');
+        $this->app->alias('fixtures', 'DariusIII\L5Fixtures\Fixtures');
     }
 
     /**

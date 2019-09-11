@@ -1,6 +1,6 @@
 # l5-fixtures
 
-[![Build Status](https://travis-ci.org/mayconbordin/l5-fixtures.svg?branch=master)](https://travis-ci.org/mayconbordin/l5-fixtures) [![Latest Stable Version](https://poser.pugx.org/mayconbordin/l5-fixtures/v/stable)](https://packagist.org/packages/mayconbordin/l5-fixtures) [![Total Downloads](https://poser.pugx.org/mayconbordin/l5-fixtures/downloads)](https://packagist.org/packages/mayconbordin/l5-fixtures) [![Latest Unstable Version](https://poser.pugx.org/mayconbordin/l5-fixtures/v/unstable)](https://packagist.org/packages/mayconbordin/l5-fixtures) [![License](https://poser.pugx.org/mayconbordin/l5-fixtures/license)](https://packagist.org/packages/mayconbordin/l5-fixtures)
+[![Build Status](https://travis-ci.org/dariusiii/l5-fixtures.svg?branch=master)](https://travis-ci.org/dariusiii/l5-fixtures) [![Latest Stable Version](https://poser.pugx.org/dariusiii/l5-fixtures/v/stable)](https://packagist.org/packages/dariusiii/l5-fixtures) [![Total Downloads](https://poser.pugx.org/dariusiii/l5-fixtures/downloads)](https://packagist.org/packages/dariusiii/l5-fixtures) [![Latest Unstable Version](https://poser.pugx.org/dariusiii/l5-fixtures/v/unstable)](https://packagist.org/packages/dariusiii/l5-fixtures) [![License](https://poser.pugx.org/dariusiii/l5-fixtures/license)](https://packagist.org/packages/dariusiii/l5-fixtures)
 
 Fixtures package for Laravel 5 with support for JSON, CSV, YAML and PHP files.
 
@@ -13,7 +13,7 @@ But if you need to load data that can't be generated then this is your best choi
 In order to install Laravel 5 Fixtures, just add 
 
 ```json
-"mayconbordin/l5-fixtures": "dev-master"
+"dariusiii/l5-fixtures": "dev-master"
 ```
 
 to your composer.json. Then run `composer install` or `composer update`.
@@ -21,13 +21,13 @@ to your composer.json. Then run `composer install` or `composer update`.
 Then in your `config/app.php` add 
 
 ```php
-'Mayconbordin\L5Fixtures\FixturesServiceProvider'
+'DariusIII\L5Fixtures\FixturesServiceProvider'
 ```
 
 in the `providers` array and
 
 ```php
-'Fixtures' => 'Mayconbordin\L5Fixtures\FixturesFacade'
+'Fixtures' => 'DariusIII\L5Fixtures\FixturesFacade'
 ```
 
 to the `aliases` array.
@@ -43,7 +43,7 @@ file will be created in your `app/config` directory.
 
 By default the fixtures directory is `/fixtures`, inside it you should place the data files that will fill
 the database. The name of the file should be exactly the same as the name of the database table (e.g.: 'table_one.json'). Take a look at the two examples
-in the [`/tests_data`](https://github.com/mayconbordin/l5-fixtures/tree/master/tests/_data) directory.
+in the [`/tests_data`](https://github.com/dariusiii/l5-fixtures/tree/master/tests/_data) directory.
 
 To apply all fixtures to the database run
 
