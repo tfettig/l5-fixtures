@@ -33,6 +33,11 @@ class Fixtures
         $this->config = $config;
     }
 
+    /**
+     * @param null $location
+     * @throws DirectoryNotFoundException
+     * @throws NotDirectoryException
+     */
     public function setUp($location = null)
     {
         if ($location === null) {
@@ -50,16 +55,25 @@ class Fixtures
         $this->metadata = new FixturesMetadata($location);
     }
 
+    /**
+     * @param null $fixtures
+     */
     public function up($fixtures = null)
     {
         $this->loadFixtures($fixtures);
     }
 
+    /**
+     * @param null $fixtures
+     */
     public function down($fixtures = null)
     {
         $this->unloadFixtures($fixtures);
     }
 
+    /**
+     * @param null $allowed
+     */
     protected function unloadFixtures($allowed = null)
     {
         $fixtures = $this->getFixtures($allowed);
@@ -77,6 +91,10 @@ class Fixtures
         $this->setForeignKeyChecks(true);
     }
 
+    /**
+     * @param null $allowed
+     * @throws InvalidDataSchemaException
+     */
     protected function loadFixtures($allowed = null)
     {
         $fixtures = $this->getFixtures($allowed);
@@ -92,6 +110,11 @@ class Fixtures
         $this->setForeignKeyChecks(true);
     }
 
+    /**
+     * @param $fixture
+     * @throws Exceptions\UnsupportedFormatException
+     * @throws InvalidDataSchemaException
+     */
     protected function loadFixture($fixture)
     {
         $rows = LoaderFactory::create($fixture->format, $this->metadata)->load($fixture->path);
@@ -117,13 +140,19 @@ class Fixtures
         }
     }
 
+    /**
+     * @param null $allowed
+     * @return array
+     * @throws DirectoryNotFoundException
+     * @throws NotDirectoryException
+     */
     public function getFixtures($allowed = null)
     {
         if ($this->metadata == null) {
             $this->setUp();
         }
 
-        if (is_null($allowed)) {
+        if ($allowed === null) {
             $fixtures = $this->metadata->getFixtures();
         } else {
             if (!is_array($allowed)) {
@@ -135,6 +164,9 @@ class Fixtures
         return $fixtures;
     }
 
+    /**
+     * @param bool $enable
+     */
     protected function setForeignKeyChecks ($enable = false)
     {
         switch(DB::getDriverName()) {
@@ -155,14 +187,16 @@ class Fixtures
         }
     }
 
+    /**
+     * @return string
+     */
     protected function truncateCommand ()
     {
-        switch(DB::getDriverName()) {
-            case 'pgsql':
-                return 'delete';
-
-            default:
-                return 'truncate';
+        $i = DB::getDriverName();
+        if ($i === 'pgsql') {
+            return 'delete';
+        } else {
+            return 'truncate';
         }
     }
 }

@@ -5,10 +5,10 @@ use DariusIII\L5Fixtures\FixturesMetadata;
 
 class LoaderFactory
 {
-    const JSON = "json";
-    const CSV  = "csv";
-    const YAML = "yaml";
-    const PHP  = "php";
+    protected const JSON = 'json';
+    protected const CSV  = 'csv';
+    protected const YAML = 'yaml';
+    protected const PHP  = 'php';
 
     private static $loaders = [];
 

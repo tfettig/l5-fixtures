@@ -76,7 +76,7 @@ class FixturesMetadata
      */
     public function getFilesystem()
     {
-        if ($this->filesystem == null) {
+        if ($this->filesystem === null) {
             $this->filesystem = new Filesystem(new Local($this->path));
             $this->filesystem->addPlugin(new ListFiles());
         }

@@ -28,6 +28,7 @@ class UpCommand extends Command
      * Execute the console command.
      *
      * @return mixed
+     * @throws FixturesException
      */
     public function handle()
     {
@@ -35,15 +36,15 @@ class UpCommand extends Command
         $dir      = $this->option('dir');
         $fixtures = $this->option('fixtures');
 
-        if ($database != null) {
+        if ($database !== null) {
             DB::setDefaultConnection($database);
         }
 
-        if ($dir != null) {
+        if ($dir !== null) {
             Fixtures::setUp($dir);
         }
 
-        if ($fixtures == null) {
+        if ($fixtures === null) {
             Fixtures::up();
         } else if (is_array($fixtures)) {
             forward_static_call_array(array('Fixtures', 'up'), $fixtures);

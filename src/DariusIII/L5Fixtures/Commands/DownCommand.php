@@ -33,7 +33,7 @@ class DownCommand extends Command
     {
         $database = $this->option('database');
 
-        if ($database != null) {
+        if ($database !== null) {
             DB::setDefaultConnection($database);
         }
 
