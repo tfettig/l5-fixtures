@@ -16,8 +16,8 @@
         "illuminate/support": "^5.8|^6.0",
         "illuminate/database": "^5.8|^6.0",
         "illuminate/console": "^5.8|^6.0",
-        "league/csv": "~8.0.0",
-        "symfony/yaml": ">=2.8.2",
+        "league/csv": "^9.0",
+        "symfony/yaml": "^4.3",
         "league/flysystem": "~1.0.16"
     },
     "require-dev": {
@@ -39,5 +39,5 @@
             }
         }
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
