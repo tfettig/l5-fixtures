@@ -2,7 +2,7 @@
     "name": "dariusiii/l5-fixtures",
     "type": "library",
     "description": "A fixtures package for Laravel",
-    "keywords": ["laravel", "laravel 5", "fixtures", "json", "yaml", "csv"],
+    "keywords": ["laravel", "fixtures", "json", "yaml", "csv"],
     "homepage": "https://github.com/dariusiii/l5-fixtures",
     "license": "MIT",
     "authors": [
@@ -13,15 +13,15 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "illuminate/support": "^6.0|^7.0|^8.0",
-        "illuminate/database": "^6.0|^7.0|^8.0",
-        "illuminate/console": "^6.0|^7.0|^8.0",
+        "illuminate/support": "^7.0|^8.0",
+        "illuminate/database": "^7.0|^8.0",
+        "illuminate/console": "^7.0|^8.0",
         "league/csv": "^9.0",
         "symfony/yaml": "^4.3",
         "league/flysystem": "~1.0.16"
     },
     "require-dev": {
-        "phpunit/phpunit": "^7.0|^8.0|^9.0",
+        "phpunit/phpunit": "^8.0|^9.0",
         "mockery/mockery": "^1.2"
     },
     "autoload": {
