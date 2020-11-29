@@ -18,7 +18,7 @@
         "illuminate/console": "^7.0|^8.0",
         "league/csv": "^9.0",
         "symfony/yaml": "^4.3",
-        "league/flysystem": "~1.0.16"
+        "league/flysystem": "^1.1"
     },
     "require-dev": {
         "phpunit/phpunit": "^8.0|^9.0",
