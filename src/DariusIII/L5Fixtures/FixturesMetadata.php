@@ -1,8 +1,8 @@
 <?php namespace DariusIII\L5Fixtures;
 
+use League\Flysystem\FileAttributes;
 use League\Flysystem\Filesystem;
-use League\Flysystem\Plugin\ListFiles;
-use League\Flysystem\Adapter\Local;
+use League\Flysystem\Local\LocalFilesystemAdapter;
 
 class FixturesMetadata
 {
@@ -42,16 +42,17 @@ class FixturesMetadata
     public function load()
     {
         $this->fixtures = [];
-        $files = $this->getFilesystem()->listFiles();
+        $files = $this->getFilesystem()->listContents('.');
 
-        foreach ($files as $file)
-        {
-            $fixture = new \stdClass();
-            $fixture->table  = $file['filename'];
-            $fixture->format = $file['extension'];
-            $fixture->path   = $file['path'];
+        foreach ($files as $file) {
+            if ($file instanceof FileAttributes) {
+                $fixture = new \stdClass();
+                $fixture->table  = (string) pathinfo($file->path(), PATHINFO_FILENAME);
+                $fixture->format = (string) pathinfo($file->path(), PATHINFO_EXTENSION);
+                $fixture->path   = $file->path();
 
-            $this->fixtures[$fixture->table] = $fixture;
+                $this->fixtures[$fixture->table] = $fixture;
+            }
         }
     }
 
@@ -77,8 +78,7 @@ class FixturesMetadata
     public function getFilesystem()
     {
         if ($this->filesystem === null) {
-            $this->filesystem = new Filesystem(new Local($this->path));
-            $this->filesystem->addPlugin(new ListFiles());
+            $this->filesystem = new Filesystem(new LocalFilesystemAdapter($this->path));
         }
 
         return $this->filesystem;
